@@ -1,0 +1,225 @@
+/* Contenedor del botón en el flujo normal - con el mismo diseño */
+.contenedor-reserva-final {
+  display: none; /* Oculto inicialmente */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  padding: 20px 10px;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  margin: 10px 10px;
+  text-align: center;
+}
+
+/* Botón flotante (solo para móviles) */
+.contenedor-reserva-flotante {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .contenedor-reserva-flotante {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0.5rem;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 1rem;
+    gap: 1rem; /* Espacio entre botones */
+  }
+  
+  /* Mostrar el contenedor final con el diseño cuando llegamos al final */
+  .mostrar-final .contenedor-reserva-final {
+    display: flex;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  /* Ocultar el flotante cuando mostramos el diseño final */
+  .mostrar-final .contenedor-reserva-flotante {
+    display: none;
+  }
+}
+
+/* Estilo del botón RESERVA (compartido) */
+.btn-reserva {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  background-color: #a50000a9;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  min-width: 120px;
+}
+
+.btn-reserva:hover {
+  background-color: #870000;
+  transform: translateY(-2px);
+}
+
+/* Estilo específico para botón WHATSAPP */
+.btn-whatsapp-flotante {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  min-width: 120px;
+}
+
+.btn-whatsapp-flotante:hover {
+  background: linear-gradient(135deg, #128C7E, #25D366);
+  transform: translateY(-2px);
+}
+
+/* Animación para aparecer suavemente */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* -----------------------------
+   BOTÓN RESERVA (ESCRITORIO)
+------------------------------ */
+.btn-flecha {
+  position: fixed;
+  bottom: 80px;
+  right: 50px;
+  z-index: 1000;
+  background: linear-gradient(135deg, #ff4d4d, #a50000);
+  color: white;
+  border: none;
+  padding: 30px 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  clip-path: polygon(
+    0% 0%, 70% 0%, 100% 50%, 70% 100%, 0% 100%, 20% 50%
+  );
+  box-shadow: 
+    0 2px 5px rgba(0, 0, 0, 0.15),
+    0 6px 20px rgba(165, 0, 0, 0.3);
+  transition: background 0.8s ease-in-out, 
+              transform 0.3s ease-in-out, 
+              box-shadow 0.3s ease-in-out;
+}
+
+.btn-flecha p {
+  margin: 0;
+}
+
+.btn-flecha:hover {
+  background: linear-gradient(135deg, #a50000, #ff4d4d);
+  transform: translateY(-4px);
+  box-shadow: 
+    0 8px 12px rgba(0, 0, 0, 0.2),
+    0 12px 30px rgba(165, 0, 0, 0.4);
+}
+
+.btn-flecha:active {
+  transform: translateY(-4px); 
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.2),
+    0 8px 18px rgba(165, 0, 0, 0.25);
+}
+
+/* -----------------------------
+   BOTÓN WHATSAPP (ESCRITORIO)
+------------------------------ */
+.btn-whatsapp {
+  position: fixed;
+  bottom: 10px;
+  right: 50px;
+  z-index: 1000;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white;
+  border: none;
+  padding: 20px 55px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 10rem;
+  box-shadow: 
+    0 2px 5px rgba(0, 0, 0, 0.15),
+    0 6px 20px rgba(18, 140, 126, 0.3);
+  transition: background 0.8s ease-in-out, 
+              transform 0.3s ease-in-out, 
+              box-shadow 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-whatsapp img.icono-whatsapp {
+  width: 20px;
+  height: 20px;
+}
+
+.btn-whatsapp p {
+  margin: 0;
+}
+
+.btn-whatsapp:hover {
+  background: linear-gradient(135deg, #128C7E, #25D366);
+  transform: translateY(-4px);
+  box-shadow: 
+    0 8px 12px rgba(0, 0, 0, 0.2),
+    0 12px 30px rgba(18, 140, 126, 0.4);
+}
+
+.btn-whatsapp:active {
+  transform: translateY(-4px); 
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.2),
+    0 8px 18px rgba(18, 140, 126, 0.25);
+}
+
+/* -----------------------------
+   VERSIÓN MÓVIL (<768px)
+------------------------------ */
+@media (max-width: 768px) {
+  /* Ocultamos botones de escritorio */
+  .btn-flecha,
+  .btn-whatsapp {
+    display: none;
+  }
+
+  /* Mostramos contenedor flotante con los dos botones */
+  .contenedor-reserva-flotante {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0.5rem;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 1rem;
+    gap: 1rem;
+  }
+}
+
+.btn-flecha {
+  bottom: 150px; 
+}
+
+.btn-whatsapp {
+  bottom: 80px; 
+}
+

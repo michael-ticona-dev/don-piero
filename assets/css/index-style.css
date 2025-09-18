@@ -1,0 +1,530 @@
+/* -----------------------------
+  RESET Y CONFIGURACIÓN GLOBAL
+------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #dddddd;
+  color: #000000;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* -----------------------------
+  HEADER
+------------------------------ */
+header {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  height: 80px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+header.transparent {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  box-shadow: none;
+}
+
+/* -----------------------------
+  LOGO (VERSIÓN CON IMAGEN)
+------------------------------ */
+.logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 100%;
+  max-height: 60px;
+  width: auto;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+/* -----------------------------
+  NAVEGACIÓN
+------------------------------ */
+.nav-bar {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-bar a {
+  color: #000000;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.nav-bar a:hover {
+  color: #a50000;
+}
+
+.nav-bar a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #a50000;
+  transition: width 0.3s ease;
+}
+
+.nav-bar a:hover::after {
+  width: 100%;
+}
+
+/* -----------------------------
+  HAMBURGUER MENU (MOBILE)
+------------------------------ */
+#menu-hamburger {
+  display: none;
+}
+
+.menu-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1100;
+  position: relative;
+}
+
+.menu-hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #000000;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* -----------------------------
+  SECCIÓN MENSAJE
+------------------------------ */
+.mensaje_donpiero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  padding: 3rem 2rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  margin: 10px 10px;
+}
+
+.mensaje-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  text-align: center;
+}
+
+.mensaje-icon p {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 1rem 0;
+  font-weight: 400;
+}
+
+.mensaje-icon p strong {
+  color: #a50000;
+  font-weight: 600;
+}
+
+/* Tamaño base (desktop) */
+.icono-llave {
+  width: 13rem;
+  height: 4rem;
+}
+
+/* Tablets medianos */
+@media (max-width: 1024px) {
+  .icono-llave {
+    width: 10rem;
+    height: 3rem;
+  }
+}
+
+/* Tablets pequeños / móviles grandes */
+@media (max-width: 780px) {
+  .icono-llave {
+    width: 8rem;
+    height: 2rem;
+  }
+}
+
+/* Móviles medianos */
+@media (max-width: 560px) {
+  .icono-llave {
+    width: 6rem;
+    height: 1.5rem;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 400px) {
+  .icono-llave {
+    width: 5rem;
+    height: 1.2rem;
+  }
+}
+
+
+.icon img {
+  width: 100%;
+  max-width: 400px; /* Ideal para escritorio */
+  height: auto;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  margin: 0 auto 1rem; /* Asegura que se centre */
+}
+
+/* -----------------------------
+  FRASE ANIMADA
+------------------------------ */
+.frase_donpiero {
+  background-color: rgb(32, 32, 32);
+  text-align: center;
+  font-size: 1.5rem;
+  color: #a50000;
+  padding: 2.5rem 1rem;
+  margin: 10px 10px;
+  border-radius: 1rem;
+  font-weight: 500;
+}
+
+#animacion-escrito {
+  font-style: italic;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+}
+
+#animacion-escrito::after {
+  content: "|";
+  animation: blink 0.7s infinite;
+  font-weight: normal;
+  position: absolute;
+  right: -10px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* -----------------------------
+  ANIMACIONES
+------------------------------ */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* -----------------------------
+  RESPONSIVE DESIGN
+------------------------------ */
+@media (max-width: 992px) {
+  .mensaje_donpiero {
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  .icon img {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 1rem;
+    height: 70px;
+  }
+  
+  .logo img {
+    max-height: 50px;
+  }
+  
+  .menu-hamburger {
+    display: flex;
+  }
+  
+  .nav-bar {
+    position: fixed;
+    top: 70px;
+    right: 10px;
+    width: 280px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1rem;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 1rem;
+    transform: translateX(120%);
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .nav-bar.active {
+    transform: translateX(0);
+  }
+  
+  .nav-bar a {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    background-color: rgba(248, 249, 250, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .mensaje_donpiero {
+    margin-top: 5px;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  .icon img {
+    max-width: 280px;
+  }
+  
+  .frase_donpiero {
+    font-size: 1.3rem;
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    height: 60px;
+  }
+  
+  .logo img {
+    max-height: 45px;
+  }
+
+  .icon img {
+    max-width: 220px;
+  }
+  
+  .nav-bar {
+    top: 60px;
+    width: 250px;
+    padding: 1rem;
+  }
+  
+  .mensaje_donpiero {
+    margin: 10px 10px;
+    padding: 1.5rem 1rem;
+    border-radius: 0.8rem;
+  }
+  
+  .icono-llave {
+    width: 6rem;
+    height: 6rem;
+  }
+  
+  .mensaje-icon p {
+    font-size: 1rem;
+  }
+  
+  .frase_donpiero {
+    font-size: 1.1rem;
+    padding: 1.5rem 1rem;
+    margin: 15px 5px;
+  }
+  
+  #animacion-escrito::after {
+    right: -8px;
+  }
+}
+
+/* Mejoras para dispositivos táctiles */
+@media (hover: none) {
+  .logo img:hover,
+  .icono-llave:hover,
+  .icon img:hover,
+  .nav-bar a:hover {
+    transform: none;
+  }
+  
+  .nav-bar a:active {
+    background-color: #ffffff;
+    transform: scale(0.98);
+  }
+  
+  .logo img:active,
+  .icon img:active {
+    transform: scale(0.98);
+  }
+}
+
+/* ========================= */
+/* FOOTER                    */
+/* ========================= */
+.derechos {
+    background-color: #333;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #444;
+    color: #aaa;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+
+.carta img, 
+.section-btn-carta {
+  opacity: 0;
+  transform: translateX(0); /* punto neutro */
+  transition: all 0.8s ease-in-out;
+}
+
+/* Imagen -> desde la izquierda */
+.carta img {
+  transform: translateX(-100px);
+}
+
+/* Texto -> desde la derecha */
+.section-btn-carta {
+  transform: translateX(100px);
+}
+
+/* Estado visible */
+.carta img.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.section-btn-carta.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* Animaciones iniciales */
+#mensaje_donpiero .mensaje-icon,
+#mensaje_donpiero .icon {
+  opacity: 0;
+  transform: translateX(0);
+  transition: all 0.8s ease-in-out;
+}
+
+/* Texto -> desde la izquierda */
+#mensaje_donpiero .mensaje-icon {
+  transform: translateX(-100px);
+}
+
+/* Imagen -> desde la derecha */
+#mensaje_donpiero .icon {
+  transform: translateX(100px);
+}
+
+/* Estado visible */
+#mensaje_donpiero .mensaje-icon.visible,
+#mensaje_donpiero .icon.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Animaciones iniciales */
+#contactos .info-contacto,
+#contactos .info-horario {
+  opacity: 0;
+  transform: translateX(0);
+  transition: all 0.8s ease-in-out;
+}
+
+/* Info contacto -> desde la izquierda */
+#contactos .info-contacto {
+  transform: translateX(-100px);
+}
+
+/* Info horario -> desde la derecha */
+#contactos .info-horario {
+  transform: translateX(100px);
+}
+
+/* Estado visible */
+#contactos .info-contacto.visible,
+#contactos .info-horario.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Estado visible */
+.visible {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+/* Texto desde la izquierda */
+.mensaje-icon,
+.info-contacto,
+.carta img {
+  transform: translateX(-60px);
+}
+
+/* Imagen desde la derecha */
+.icon,
+.info-horario,
+.section-btn-carta {
+  transform: translateX(60px);
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; 
+}

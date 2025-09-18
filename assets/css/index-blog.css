@@ -1,0 +1,145 @@
+/* ================================
+   Fuente Poppins
+================================ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* ================================
+   Oculto por defecto
+================================ */
+.hidden {
+  display: none;
+}
+
+/* ================================
+   Fondo oscuro tipo modal
+================================ */
+.blog-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 2rem;
+}
+
+/* ================================
+   Caja del blog centrada
+================================ */
+.blog-box {
+  background-color: #fefefe;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  animation: fadeInCenter 0.4s ease forwards;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ================================
+   Animación de aparición
+================================ */
+@keyframes fadeInCenter {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ================================
+   Texto del blog
+================================ */
+.blog-texto {
+  text-align: center;
+  white-space: pre-wrap;
+  line-height: 1.8;
+  color: #333;
+  font-size: 1.05rem;
+}
+
+
+/*
+lado derecho
+blog-texto {
+  text-align: center;
+  white-space: pre-wrap;
+  line-height: 1.8;
+  color: #333;
+  font-size: 1.05rem;
+}
+*/
+
+/* ================================
+   Botón de cerrar
+================================ */
+.cerrar-blog {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background-color: #a50000;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+.cerrar-blog:hover {
+  background-color: #ff1a1a;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .blog-box {
+    max-width: 95%;
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  .blog-texto {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .cerrar-blog {
+    top: 10px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-box {
+    max-width: 98%;
+    max-height: 85vh;
+    padding: 1.2rem;
+    border-radius: 14px;
+  }
+
+  .blog-texto {
+    font-size: 0.95rem;
+  }
+
+  .cerrar-blog {
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+  }
+}

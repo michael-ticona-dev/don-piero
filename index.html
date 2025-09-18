@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Don Piero Piscigranja</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="assets/css/index-style.css">
+    <link rel="stylesheet" href="assets/css/index-carta.css">
+    <link rel="stylesheet" href="assets/css/index-contacto.css">
+    <link rel="stylesheet" href="assets/css/index-btn-reserva.css">
+    <link rel="stylesheet" href="assets/css/index-animacion-principal.css">
+    <link rel="stylesheet" href="assets/css/index-map.css">
+    <link rel="stylesheet" href="assets/css/index-blog.css">
+
+</head>
+<body id="top">
+    <header>
+        <div class="logo">
+            <a href="#top">
+                <img src="assets/images/logos/LOGO-DON-PIERO-PISCIGRANJA.png" alt="LOGO-DON-PIERO-PISCIGRANJA">
+            </a>
+        </div>
+
+        <input type="checkbox" name="menu-hamburger" id="menu-hamburger" />
+        <label for="menu-hamburger" class="menu-hamburger">
+            <span class="menu"></span>
+            <span class="menu"></span>
+            <span class="menu"></span>
+        </label>
+
+        <nav class="nav-bar">
+            <a href="#mensaje_donpiero">Inicio</a>
+            <a href="#carta">Carta</a>
+            <a id="reserva">Reservas</a>
+            <a href="#map">Ubicación</a>
+            <a href="#blog">Blog</a>
+            <a href="#contactos">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ===== Sección Portada ===== -->
+        <section class="portada" id="portada">
+            <div class="content">
+                <div class="wrap-img">
+                    <img id="imgRotatoria" alt="Plato destacado">
+                    <button class="zona-clic izquierda" onclick="cambiarImagen(-1)">‹</button>
+                    <button class="zona-clic derecha" onclick="cambiarImagen(1)">›</button>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="mensaje_donpiero" id="mensaje_donpiero">
+            <div class="mensaje-icon">
+                <img src="./assets/images/otros/corchetes.png" alt="llave superior" class="icono-llave"/>
+                <p>
+                    Descubre en <strong>Piscigranja Don Piero</strong> la esencia campestre de Sachaca: truchas criadas en lago propio, platillos frescos y espíritu familiar, todo en un entorno junto al río y los volcanes que te invita a reconectar con la tradición arequipeña.
+                </p>
+                <img src="./assets/images/otros/corchetes.png" alt="llave inferior" class="icono-llave invertida"/>
+            </div>
+            <div class="icon">
+                <img src="assets/images/otros/fachada-don-piero.jpg" alt="fachada don piero">
+            </div>
+        </section>
+
+        <section class="frase_donpiero" id="frase_donpiero">
+            <p><strong>Don Piero:</strong> <span id="animacion-escrito"></span></p>
+        </section>  
+
+        <section class="carta" id="carta">
+            <img src="assets/images/otros/seccion-carta.jpg" alt="imagen ronda marina">
+            
+            <div class="section-btn-carta" id="section-btn-carta">
+                <button class="carta-2024" id="abrir-carta-comida">Ver carta de comida</button>
+                <button class="carta-2024" id="abrir-carta-bebidas">Ver carta de bebidas</button>
+                <button class="carta-2024" id="abrir-proformas">Ver proformas</button>
+                
+                <p>
+                    Sumérgete en la experiencia de <strong>Piscigranja Don Piero</strong>, un espacio natural entre río y volcanes donde se respira tradición, familia y sabor. 
+                    Explora nuestras cartas y disfruta de platos preparados con ingredientes frescos del campo, bebidas únicas de la región, y recetas tradicionales que reconectan con lo auténtico.  
+                    Asimismo, ponemos a tu disposición <strong>proformas</strong> detalladas para que cuentes con información clara y formal al momento de realizar tus reservas o eventos especiales. 
+                </p>
+            </div>
+        </section>
+
+        <!-- Modal Carta Comida -->
+        <div id="modal-comida" class="modal hidden">
+            <div class="modal-content">
+                <span class="cerrar">&times;</span>
+                <iframe src="" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <!-- Modal Carta Bebidas -->
+        <div id="modal-bebidas" class="modal hidden">
+            <div class="modal-content">
+                <span class="cerrar">&times;</span>
+                <iframe src="" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <!-- Modal Proformas -->
+        <div id="modal-proformas" class="modal hidden">
+            <div class="modal-content">
+                <span class="cerrar">&times;</span>
+                <iframe src="" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <div class="map" id="map">
+            <div class="contenedor-mapa">
+                <iframe
+                src="https://maps.google.com/maps?q=Piscigranja%20Don%20Piero%20Sachaca%20Arequipa&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+
+        <section class="contactos" id="contactos">
+            <div class="contenedor-contactos">
+                <div class="info-contacto">
+                    <h3>CONOZCÁMONOS
+                        <div class="redes">
+                            <a href="https://www.facebook.com/PiscigranjaDonPiero?locale=es_LA" target="_blank">
+                                <img src="assets/images/otros/facebook.png" alt="Facebook" width="32">
+                            </a>
+                            <a href="https://www.instagram.com/piscigranja_donpiero/" target="_blank">
+                                <img src="assets/images/otros/instagram.png" alt="Instagram" width="32">
+                            </a>
+                        </div>
+                    </h3>
+
+                    <p>El Monte C12, Urbanización El Palacio (1ra etapa), detrás de la ex-para de Tingo - Sachaca, Arequipa</p>
+                    <p>
+                    <a href="mailto:donpieropiscigranja@gmail.com" target="_blank" rel="noopener noreferrer">
+                        donpieropiscigranja@gmail.com
+                    </a>
+                    </p>
+
+                    <hr>
+                    <p>973 006 375 / (000) 000000</p>
+                    <hr>
+                    <p>RUC: 20603390025</p>
+                    <p>Razón Social: PISCIGRANJA DON PIERO E.I.R.L..</p>
+                </div>
+
+                <div class="info-horario">
+                    <p><strong>Horario de atención:</strong></p>
+                    <p>De lunes a domingo de 9:30 am a 5:30 pm</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="blog-modal hidden">
+            <div class="blog-overlay">
+                <div class="blog-box">
+                <button class="cerrar-blog" aria-label="Cerrar blog">&times;</button>
+                    <div id="blog-content" class="blog-texto">
+                        <p>Cargando publicación...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contenedor final (se muestra al llegar al final) -->
+        <div class="contenedor-reserva-final">
+            <button class="btn-reserva">Reserva</button>
+            <a href="https://wa.me/51973006375" target="_blank" class="btn-whatsapp-flotante">
+                📲 WhatsApp
+            </a>
+        </div>
+
+        <!-- Botones flotantes (siempre visibles excepto al final) -->
+        <div class="contenedor-reserva-flotante">
+            <button class="btn-reserva">Reserva</button>
+            <a href="https://wa.me/51973006375" target="_blank" class="btn-whatsapp-flotante">
+                📲 WhatsApp
+            </a>
+        </div>
+
+
+    </main>
+
+    <footer>
+        <div class="derechos">
+            <p>&copy; 2025 Don Piero. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div class="btn-reserva-container">
+        <!-- Botón Reservar -->
+        <button class="btn-flecha" onclick="handleReservaClick(event)">
+            <p>Reservar Ahora</p>
+        </button>
+
+        <!-- Botón WhatsApp -->
+        <button class="btn-whatsapp" onclick="window.open('https://wa.me/51973006375','_blank')">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" 
+                alt="WhatsApp" class="icono-whatsapp" width="24" height="24">
+            <span>WhatsApp</span>
+        </button>
+
+    </div>
+
+
+
+
+    <script src="assets/js/index-script.js"></script>
+    <script src="assets/js/index-animaciones.js"></script>
+    <script src="assets/js/index-carta.js"></script>
+    <script src="assets/js/index-animacion-principal.js"></script>
+    <script src="assets/js/index-btn-envio.js"></script>
+    <script src="assets/js/index-blog.js"></script>
+    <script src="assets/js/index-map.js"></script>
+</body>
+</html>

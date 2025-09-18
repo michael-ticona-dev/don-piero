@@ -1,0 +1,136 @@
+/* Importar fuente Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* -----------------------------
+   SECCIÓN CONTACTOS
+------------------------------ */
+.contactos {
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin: 10px 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Contenedor general: ahora en fila (lado a lado) */
+.contenedor-contactos {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Bloques izquierdo y derecho */
+.info-contacto,
+.info-horario {
+  flex: 1 1 45%;
+  min-width: 280px;
+}
+
+/* Encabezado de contacto */
+.info-contacto h3 {
+  font-size: 1.5rem;
+  color: #303030;
+  font-family: 'akrobat-bold', sans-serif;
+  letter-spacing: 0.25rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Íconos de redes */
+.info-contacto h3 a img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+}
+
+.info-contacto h3 a img:hover {
+  transform: scale(1.1);
+}
+
+/* Párrafos */
+.info-contacto p,
+.info-horario p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0.25rem 0;
+}
+
+/* Separadores */
+.info-contacto hr {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  margin: 0.8rem 0;
+}
+
+/* Horario resaltado */
+.info-horario strong {
+  font-weight: bold;
+  color: #a50000;
+}
+
+/* Enlace mail */
+.info-contacto a {
+  color: #a50000;
+  text-decoration: none;
+}
+
+.info-contacto a:hover {
+  text-decoration: underline;
+}
+
+/* -----------------------------
+   RESPONSIVE DESIGN
+------------------------------ */
+@media (max-width: 768px) {
+  .contenedor-contactos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-contacto,
+  .info-horario {
+    width: 100%;
+    text-align: center;
+  }
+
+  .info-contacto h3 {
+    font-size: 1.3rem;
+    justify-content: center;
+  }
+
+  .info-contacto p,
+  .info-horario p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactos {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+
+  .info-contacto h3 {
+    font-size: 1.1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .info-contacto h3 a img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .info-contacto p,
+  .info-horario p {
+    font-size: 0.95rem;
+  }
+}

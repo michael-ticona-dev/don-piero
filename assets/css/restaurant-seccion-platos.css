@@ -1,0 +1,392 @@
+/* ====================== */
+/* ESTILOS DE LOS BOTONES */
+/* ====================== */
+.toggle-icon {
+  font-size: 0.8em;
+  margin-left: 6px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.toggle-icon.girado {
+  transform: rotate(180deg);
+}
+
+/* ========================= */
+/* DESCRIPCIÓN DEL PLATO     */
+/* ========================= */
+@keyframes smoothAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.plato-descripcion {
+  display: none;
+  padding: 0;
+  background-color: #fffefc;
+  border-top: 1px solid #eee;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.plato-descripcion.visible {
+  display: block;
+  max-height: 1000px;
+  padding: 20px;
+  animation: smoothAppear 0.4s ease-out;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-top: none;
+}
+
+.plato-detalle {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.plato-detalle img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.plato-detalle img:hover {
+  transform: scale(1.02);
+}
+
+.texto-detalle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+  flex: 1;
+  padding: 8px 0;
+}
+
+.texto-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.texto-info p {
+  margin: 0;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  font-weight: 400;
+  max-width: 500px;
+}
+
+.precio-plato {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad390); 
+  padding: 6px 16px;
+  margin: 0 10px;
+  border-radius: 30px;   
+  font-weight: 700;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.5px;   
+  text-shadow: 0 1px 2px rgba(0,0,0,0.25); 
+  box-shadow: 
+    0 4px 10px rgba(0,0,0,0.15),       
+    inset 0 2px 4px rgba(255,255,255,0.3); 
+  display: inline-block;
+  white-space: nowrap;
+  min-width: 70px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* EFECTO HOVER */
+.precio-plato:hover {
+  transform: scale(1.08) rotate(-1deg);
+  box-shadow: 
+    0 6px 14px rgba(0,0,0,0.25),
+    inset 0 2px 6px rgba(255,255,255,0.4);
+  background: linear-gradient(135deg, #f6d365, #fda085, #f7797d);
+}
+
+
+/* ====================== */
+/* HEADER DEL PLATO       */
+/* ====================== */
+.plato-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-bottom: 12px;
+}
+
+.plato-header .plato-titulo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0;
+  flex: 1;
+  min-width: 120px;
+}
+
+/* ESTILOS PARA PLATO-CONTROLES EN HEADER */
+.plato-header .plato-controles {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* ESTILOS BASE PARA BOTONES EN HEADER */
+.plato-header .boton-cantidad {
+  width: 32px;
+  height: 32px;
+  background-color: #a50000;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  flex-shrink: 0;
+}
+
+.plato-header .boton-cantidad:hover {
+  background-color: #fa0606;
+}
+
+.plato-header .cantidad-plato {
+  min-width: 30px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.plato-header .boton-eliminar {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.plato-header .boton-eliminar:hover {
+  background-color: #ff5252;
+}
+
+/* ESTILOS PARA PLATO-CONTROLES EN DESCRIPCIÓN */
+.texto-info .plato-controles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 8px 0;
+}
+
+.texto-info .plato-titulo {
+  flex: 1;
+  min-width: 100px;
+  font-weight: 500;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.texto-info .plato-controles-fila {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.texto-info .boton-cantidad {
+  width: 30px;
+  height: 30px;
+  background-color: #a50000;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  flex-shrink: 0;
+}
+
+.texto-info .boton-cantidad:hover {
+  background-color: #fa0606;
+}
+
+.texto-info .cantidad-plato {
+  min-width: 25px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.texto-info .boton-eliminar {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.texto-info .boton-eliminar:hover {
+  background-color: #ff5252;
+}
+
+/* ======================== */
+/* RESPONSIVE TABLET        */
+/* ======================== */
+@media (max-width: 768px) {
+  .plato-detalle {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .plato-detalle img {
+    width: 100%;
+    max-width: 280px;
+    height: 200px;
+  }
+
+  .texto-detalle {
+    min-height: auto;
+    width: 100%;
+    padding: 0;
+    align-items: center;
+  }
+
+  .texto-info {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .texto-info p {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .precio-plato {
+    align-self: center;
+    margin-top: 16px;
+  }
+
+  .plato-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .plato-header .plato-controles {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .plato-descripcion.visible {
+    padding: 18px;
+  }
+  
+  /* RESPONSIVE PARA PLATO-CONTROLES EN DESCRIPCIÓN */
+  .texto-info .plato-controles {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .texto-info .plato-titulo {
+    text-align: center;
+    width: 100%;
+  }
+
+  .texto-info .plato-controles-fila {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+  }
+}
+
+/* ======================== */
+/* RESPONSIVE MÓVIL         */
+/* ======================== */
+@media (max-width: 480px) {
+  .plato-detalle img {
+    height: 180px;
+    max-width: 100%;
+  }
+
+  .texto-info p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .precio-plato {
+    font-size: 0.95rem;
+    padding: 8px 14px;
+    margin-top: 14px;
+  }
+
+  .plato-header .plato-titulo {
+    font-size: 1.1rem;
+  }
+
+  .plato-descripcion.visible {
+    padding: 16px;
+  }
+  
+  /* AJUSTES ADICIONALES PARA MÓVILES */
+  .texto-info .plato-controles-fila {
+    gap: 6px;
+  }
+  
+  .texto-info .boton-cantidad {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .texto-info .cantidad-plato {
+    min-width: 22px;
+    font-size: 0.9rem;
+  }
+  
+  .texto-info .boton-eliminar {
+    padding: 5px 8px;
+    font-size: 0.8rem;
+  }
+}

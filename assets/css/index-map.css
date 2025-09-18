@@ -1,0 +1,72 @@
+/* ===============================
+   RESET BÁSICO
+================================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+
+/* ===============================
+   CONTENEDOR PRINCIPAL
+   (Usado para secciones como ubicación)
+================================= */
+.map {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ===============================
+   CONTENEDOR DEL MAPA
+================================= */
+.contenedor-mapa {
+  width: 100%;
+  height: 0;
+  padding-bottom: 20%; /* Cambia este valor para modificar la altura */
+  margin: 10px 10px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.contenedor-mapa iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
+/* ===============================
+   RESPONSIVE
+================================= */
+@media (max-width: 600px) {
+  .map {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .contenedor-mapa {
+    padding-bottom: 85%; /* Mapa más alto en móviles */
+    margin: 0;
+  }
+}

@@ -1,0 +1,296 @@
+/* Estilos base del checkbox personalizado */
+.checkbox-personalizado {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #333;
+  cursor: pointer;
+  position: relative;
+  padding-left: 30px;
+  line-height: 1.5;
+  user-select: none;
+  margin-bottom: 20px;
+}
+
+/* Versión móvil - ajustes específicos */
+@media (max-width: 768px) {
+  .checkbox-personalizado {
+    font-size: 0.85rem; /* Tamaño de fuente ligeramente menor */
+    padding-left: 28px; /* Menos espacio para pantallas pequeñas */
+    line-height: 1.4; /* Interlineado más ajustado */
+  }
+}
+
+/* Checkbox nativo oculto */
+.checkbox-personalizado input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Estilo visual del checkbox */
+.checkbox-personalizado .checkmark {
+  position: absolute;
+  left: 0;
+  top: 3px;
+  height: 18px;
+  width: 18px;
+  background-color: #eee;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+/* Ajustes para móvil */
+@media (max-width: 480px) {
+  .checkbox-personalizado .checkmark {
+    height: 16px;
+    width: 16px;
+    top: 2px;
+  }
+}
+
+/* Estado seleccionado */
+.checkbox-personalizado input[type="checkbox"]:checked ~ .checkmark {
+  background-color: #0077b6;
+  border-color: #0077b6;
+}
+
+/* Icono de check */
+.checkbox-personalizado .checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-personalizado input[type="checkbox"]:checked ~ .checkmark::after {
+  display: block;
+  left: 5px;
+  top: 1px;
+  width: 4px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Ajuste del check para móvil */
+@media (max-width: 480px) {
+  .checkbox-personalizado input[type="checkbox"]:checked ~ .checkmark::after {
+    left: 4px;
+    top: 0;
+    width: 3px;
+    height: 8px;
+  }
+}
+
+/* Estilo del enlace */
+.checkbox-personalizado a {
+  color: #0077b6;
+  text-decoration: underline;
+  margin-left: 5px;
+  font-weight: 500;
+}
+
+/* Mejora para enlaces en móvil */
+@media (max-width: 480px) {
+  .checkbox-personalizado a {
+    margin-left: 3px;
+    word-break: break-word; /* Evita desbordamiento */
+  }
+}
+
+
+
+
+
+
+/* ===== MODAL CENTRADO Y RESPONSIVO ===== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;       /* Centra verticalmente */
+  justify-content: center;   /* Centra horizontalmente */
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  backdrop-filter: blur(3px);
+  padding: 20px;
+  overflow: hidden;
+}
+
+.modal.mostrar {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ===== CONTENIDO CENTRADO ===== */
+.modal-contenido {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 700px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  color: #333;
+  font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
+  text-align: center;
+  animation: fadeInUp 0.4s ease forwards;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Animación de aparición */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* TÍTULOS */
+.modal-contenido h2,
+.modal-contenido h3 {
+  text-align: center;
+  margin: 0 auto 20px;
+  color: #2a6f97;
+  font-weight: 600;
+  line-height: 1.3;
+  max-width: 90%;
+}
+
+/* PÁRRAFOS */
+.modal-contenido p {
+  font-size: 1rem;
+  margin: 0 auto 15px;
+  color: #495057;
+  max-width: 90%;
+  line-height: 1.6;
+}
+
+/* LISTAS CENTRADAS Y ALINEADAS */
+.modal-contenido ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 auto 20px;
+  padding-left: 0;
+  list-style: none;
+  max-width: 85%;
+}
+
+.modal-contenido ul li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.modal-contenido ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #2a6f97;
+  font-size: 1.4em;
+  line-height: 1;
+}
+
+/* ENLACES */
+.modal-contenido a {
+  color: #2a6f97;
+  text-decoration: none;
+  border-bottom: 1px solid;
+  transition: all 0.2s ease;
+}
+
+.modal-contenido a:hover {
+  color: #1a4b6d;
+}
+
+/* BOTÓN CERRAR */
+.modal-contenido .cerrar {
+  position: fixed;        /* 🔥 Fijado a la ventana */
+  top: 20px;
+  right: 30px;
+  font-size: 24px;
+  font-weight: 300;
+  color: #6c757d;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+  background: none;
+  border: none;
+  padding: 5px;
+  z-index: 2000;          /* Asegura que esté sobre todo */
+}
+
+
+.modal-contenido .cerrar:hover {
+  color: #d62828;
+  transform: rotate(90deg);  /* Si quieres el giro */
+}
+
+/* SCROLL SOLO EN MODAL */
+.modal-contenido::-webkit-scrollbar {
+  width: 8px;
+}
+.modal-contenido::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.modal-contenido::-webkit-scrollbar-thumb {
+  background-color: #2a6f97;
+  border-radius: 4px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .modal-contenido {
+    padding: 30px 20px;
+    width: 95%;
+  }
+
+  .modal-contenido h2 {
+    font-size: 1.4rem;
+  }
+
+  .modal-contenido h3 {
+    font-size: 1.2rem;
+  }
+
+  .modal-contenido p {
+    font-size: 0.95rem;
+  }
+
+  .modal-contenido ul {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-contenido {
+    padding: 25px 15px;
+    border-radius: 10px;
+  }
+
+  .modal-contenido h2 {
+    font-size: 1.3rem;
+    padding-right: 30px;
+  }
+
+  .modal-contenido .cerrar {
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+  }
+
+  .modal-contenido ul li {
+    padding-left: 22px;
+    font-size: 0.95rem;
+  }
+}

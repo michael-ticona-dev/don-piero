@@ -1,0 +1,277 @@
+/* Fuente Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* =====================================
+   PORTADA – CARRUSEL RESPONSIVO CUADRADO
+===================================== */
+main {
+  margin-top: 100px;
+}
+
+/* Contenedor principal */
+.portada {
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  margin: 10px 10px;
+  justify-content: center;
+}
+
+
+/* Contenedor de imagen - VERSIÓN CORREGIDA */
+.wrap-img {
+  width: 100%;
+  height: 360px;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Imagen centrada - CORRECCIÓN MÓVIL */
+.wrap-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 1rem;
+  transition: opacity 0.5s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Botones de navegación */
+.zona-clic {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.zona-clic:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.zona-clic:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.zona-clic.izquierda { left: 15px; }
+.zona-clic.derecha { right: 15px; }
+
+/* Zonas de clic */
+.wrap-img::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 5;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><path d='M20 6 L12 16 L20 26' fill='none' stroke='white' stroke-width='3'/></svg>"), auto;
+}
+
+.wrap-img::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 5;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><path d='M12 6 L20 16 L12 26' fill='none' stroke='white' stroke-width='3'/></svg>"), auto;
+}
+
+.wrap-img:hover .zona-clic {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* -----------------------------
+   RESPONSIVE DESIGN OPTIMIZADO
+------------------------------ */
+
+/* Pantallas hasta 1024px */
+@media (max-width: 1024px) {
+  main {
+    margin-top: 100px;
+  }
+
+  .portada {
+    padding: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .wrap-img {
+    width: 90vw;
+    height: 90vw;
+    max-width: 500px;
+    max-height: 500px;
+    margin: 10px 10px;
+  }
+}
+
+/* Tablet y móviles grandes */
+@media (max-width: 768px) {
+  main {
+    margin-top: 90px !important;
+  }
+
+  .portada {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .wrap-img {
+    width: 95vw;
+    height: 95vw;
+    max-width: 450px;
+    max-height: 450px;
+    border-radius: 8px;
+    margin: 10px 10px;
+  }
+
+  .zona-clic {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+
+  .wrap-img img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+/* Móviles medianos */
+@media (max-width: 600px) {
+  main {
+    margin-top: 90px;
+  }
+
+  .portada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .wrap-img {
+    width: 94vw;
+    height: 94vw;
+    max-width: 400px;
+    max-height: 400px;
+    margin: 10px 10px;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  main {
+    margin-top: 75px !important;
+  }
+
+  .portada {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .wrap-img {
+    width: calc(100vw - 10px);
+    height: calc(100vw - 10px);
+    max-width: 350px;
+    max-height: 350px;
+    margin: 10px 10px;
+  }
+
+  .zona-clic {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 360px) {
+  main {
+    margin-top: 70px;
+  }
+
+  .wrap-img {
+    width: calc(100vw - 8px);
+    height: calc(100vw - 8px);
+    max-width: 300px;
+    max-height: 300px;
+    margin: 10px 10px;
+    padding: 10px 10px;
+  }
+
+  .zona-clic {
+    width: 25px;
+    height: 25px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .wrap-img {
+    max-width: 280px;
+    max-height: 280px;
+    margin: 10px 10px;
+  }
+
+  .zona-clic {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Horizontales en móviles */
+@media (max-width: 768px) and (orientation: landscape) {
+  main {
+    margin-top: 40px;
+  }
+
+  .portada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .wrap-img {
+    width: 75vh;
+    height: 75vh;
+    max-width: 350px;
+    max-height: 350px;
+    margin: 10px 10px;
+  }
+}
